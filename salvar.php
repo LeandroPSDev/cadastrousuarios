@@ -3,12 +3,12 @@
     switch ($_REQUEST["acao"]) {
 
         case 'cadastrar':
-            $nome = $_POST["nome"];
-            $valor = $_POST["valor"];
-            $descricao = $_POST["descricao"];
-            $ativo = $_POST["ativo"];
+            $name = $_POST["name"];
+            $email = $_POST["email"];
+            $password = md5($_POST["password"]);
+            $status = $_POST["status"];
 
-            $sql = "INSERT INTO livros (nome, descricao, valor, ativo) VALUES ('{$nome}', '{$descricao}', '{$valor}', '{$ativo}')";
+            $sql = "INSERT INTO users (name, email, password, status) VALUES ('{$name}', '{$email}', '{$password}', '{$status}')";
             $res = $conn->query($sql);
 
             if($res==true){
@@ -22,12 +22,12 @@
             break;
             
         case 'editar':           
-            $nome = $_POST["nome"];
-            $descricao = $_POST["descricao"];
-            $valor = $_POST["valor"];
-            $ativo = $_POST["ativo"];
+            $name = $_POST["name"];
+            $email = $_POST["email"];
+            $password = md5($_POST["password"]);
+            $status = $_POST["status"];
 
-            $sql = "UPDATE livros SET nome = '{$nome}', descricao = '{$descricao}', valor = '{$valor}', ativo = '{$ativo}' WHERE id=".$_REQUEST["id"];
+            $sql = "UPDATE users SET 'name' = '{$name}', email = '{$email}', 'password' = '{$password}', 'status' = '{$status}' WHERE id=".$_REQUEST["id"];
             $res = $conn->query($sql);
 
             if($res==true){
@@ -41,7 +41,7 @@
             break;
 
         case 'excluir':            
-            $sql = "DELETE FROM livros WHERE id=".$_REQUEST["id"];
+            $sql = "DELETE FROM users WHERE id=".$_REQUEST["id"];
             $res = $conn->query($sql);
 
             if($res==true){

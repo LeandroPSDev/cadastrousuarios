@@ -5,7 +5,7 @@
     <input type="hidden" name="acao" value="cadastrar" />
 
     <div class="livraria-form">
-        <input type="text" name="nome" placeholder="Digite o nome" class="form-control" required />
+        <input type="text" name="name" placeholder="Digite o nome" class="form-control" required />
     </div>
 
     <div class="livraria-form">
@@ -13,7 +13,15 @@
     </div>
 
     <div class="livraria-form">
-        <input type="password" name="senha" placeholder="digite sua senha" class="form-control" required >
+        <input type="password" name="password" placeholder="digite sua senha" class="form-control" required >
+    </div>
+
+    <div class="livraria-form">
+        <select name="status" class="form-control" required>
+            <option value="" disabled selected>Qual a situação do usuário?</option>
+            <option value="Y">Ativo</option>
+            <option value="N">Inativo</option>
+        </select>
     </div>
 
     <div class="livraria-form">
