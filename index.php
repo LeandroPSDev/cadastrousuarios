@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Cadastro de livros</title>
+        <title>Cadastro de usuários</title>
         <link href="imagens/favicon.png" rel="icon">
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
 
@@ -20,10 +20,10 @@
             <nav> 
                 <ul>
                     <li>
-                    <a href="index.php">Listar livros</a>
+                    <a href="index.php">Listar usuários</a>
                     </li>
                     <li>
-                    <a href="?page=novo" >Cadastrar livro</a>
+                    <a href="?page=novo" >Cadastrar usuários</a>
                     </li>
                 </ul> 
             </nav>

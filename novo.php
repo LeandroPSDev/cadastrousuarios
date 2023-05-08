@@ -9,19 +9,11 @@
     </div>
 
     <div class="livraria-form">
-        <input type="number" name="valor" placeholder="Digite o valor" class="form-control" required />
+        <input type="email" name="email" placeholder="Digite o e-mail" class="form-control" required />
     </div>
 
     <div class="livraria-form">
-        <select name="ativo" class="form-control" required>
-            <option value="" disabled selected>Qual a situação do produto?</option>
-            <option value="Y">Ativo</option>
-            <option value="N">Inativo</option>
-        </select>
-    </div>
-
-    <div class="livraria-form">
-        <textarea name="descricao" placeholder="Descrição do livro" class="form-control" required ></textarea>
+        <input type="password" name="senha" placeholder="digite sua senha" class="form-control" required >
     </div>
 
     <div class="livraria-form">
