@@ -27,7 +27,7 @@
             $password = md5($_POST["password"]);
             $status = $_POST["status"];
 
-            $sql = "UPDATE users SET 'name' = '{$name}', email = '{$email}', 'password' = '{$password}', 'status' = '{$status}' WHERE id=".$_REQUEST["id"];
+            $sql = "UPDATE users SET name = '{$name}', email = '{$email}', password = '{$password}', status = '{$status}' WHERE id=".$_REQUEST["id"];
             $res = $conn->query($sql);
 
             if($res==true){

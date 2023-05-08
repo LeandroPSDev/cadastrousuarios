@@ -8,14 +8,14 @@
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A maior livraria com os melhores livros" />
-        <meta name="keywords" content="livros,livraria,melhores livros" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
         <meta name="author" content="Leandro Pires dos Santos" />
 
     </head>
     <body>
-        <div id="livraria-topo">
-            <div><img src="imagens/favicon.png" alt="Cadastro de livros" title="Cadastro de livros" style="margin-right: 10px;" /></div>
+        <div id="usuario-topo">
+            <div><img src="imagens/favicon.png" alt="Cadastro de usuários" title="Cadastro de usuários" style="margin-right: 10px;" /></div>
                 
             <nav> 
                 <ul>
@@ -29,7 +29,7 @@
             </nav>
         </div>
 
-        <div id="livraria-conteudo">
+        <div id="usuario-conteudo">
             <?php
                 include('config.php');
 
@@ -56,6 +56,7 @@
         <footer>
             <a href="#">Cadastro usuário</a>
         </footer>
+        <script src="js/scripts.js"></script>
    
     </body>
 </html>
