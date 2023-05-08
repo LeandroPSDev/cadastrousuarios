@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+body {
+    font-family: 'tahoma', 'arial', 'sans-serif', 'verdana';
+    color: #272727;
+    overflow-x: hidden;
+    background: #FFF;
+    padding-bottom: 40px;
+}
+
+h1 {
+    color: #444;
+}
+
+button {
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    margin: 10px auto 30px auto;
+    text-align: center;
+}
+
+table th {
+    background-color: #BBB;
+    padding: 5px 0;
+    color: #FFF;
+}
+
+table td {
+    padding: 5px;
+}
+
+table td img {
+    margin: 0 5px;
+}
+
+table tr:nth-child(2n+1) td {
+    background: #EEE;
+}
+
+#livraria-conteudo {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.tCenter {
+    text-align: center;
+}
+
+#livraria-topo {
+    background: linear-gradient(to top, #EEF, #FEE);
+    padding: 10px 15px;
+    display: flex;
+}
+
+#livraria-topo div {
+    margin-right: 20px;
+}
+
+#livraria-topo nav {
+    position: relative;
+    padding: 10px 0;
+}
+
+#livraria-topo ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+#livraria-topo ul li a,
+.livraria-form button,
+.livraria-voltar a {
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(30, 144, 255, 1);
+    color: #FFF;
+    font-weight: bold;
+}
+
+.livraria-voltar a {
+    background: rgba(255, 160, 122, 1);
+}
+
+#livraria-topo ul li:nth-child(2) a,
+.livraria-form button:hover {
+    background: rgba(0, 255, 0, 1);
+}
+
+#livraria-topo ul li a:hover,
+.livraria-voltar a:hover {
+    box-shadow: 0 0 10px 2px #CCC;
+}
+
+#livraria-formulario {
+    width: 50%;
+    margin: 10px auto;
+}
+
+.livraria-form {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.livraria-form input,
+.livraria-form select,
+.livraria-form textarea {
+    box-shadow: 0 0 1px 1px #CCC;
+    padding: 10px 2%;
+    width: 96%;
+    border-radius: 5px;
+    resize: none;
+    color: #999;
+}
+
+.livraria-form textarea {
+    min-height: 100px;
+}
+
+.livraria-form select {
+    width: 100%;
+}
+
+.livraria-form input::placeholder,
+.livraria-form textarea::placeholder {
+    color: #BBB;
+}
+
+.livraria-voltar {
+    width: 100%;
+    text-align: right;
+    padding: 10px 0;
+}
+
+#livraria-aviso {
+    background: red;
+    width: 100%;
+    height: 30px;
+}
+
+footer {
+    background: #333;
+    text-align: center;
+    color: #FFF;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+footer a {
+    color: #FFF;
+}
+
+footer a:hover {
+    color: #20b2aa;
+}
