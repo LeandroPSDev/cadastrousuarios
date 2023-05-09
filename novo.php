@@ -41,15 +41,15 @@
     </div>
 
     <div class="usuario-form">
-        <input type="email" id="email" name="email" placeholder="Digite o e-mail" value="<?php echo ($_POST['name'] ? $_POST['name'] : ""); ?>" />
+        <input type="email" id="email" name="email" placeholder="Digite o e-mail" value="<?php echo ($_POST['email'] ? $_POST['email'] : ""); ?>" />
     </div>
 
     <div class="usuario-form">
-        <input type="password" id="password" minlength="6" name="password" placeholder="Digite sua senha" value="<?php echo ($_POST['name'] ? $_POST['name'] : ""); ?>" >
+        <input type="password" id="password" minlength="6" name="password" placeholder="Digite sua senha" value="<?php echo ($_POST['password'] ? $_POST['password'] : ""); ?>" >
     </div>
 
     <div class="usuario-form">
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme a senha" value="<?php echo ($_POST['name'] ? $_POST['name'] : ""); ?>" >
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme a senha" value="<?php echo ($_POST['confirm-password'] ? $_POST['confirm-password'] : ""); ?>" >
     </div>
 
     <div class="usuario-form">
