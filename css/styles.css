@@ -166,3 +166,11 @@ footer a {
 footer a:hover {
     color: #20b2aa;
 }
+
+#usuarios-mensagem {
+    width: 100%;
+    padding: 10px 0;
+    color: #DD0000;
+    background: green;
+    border-radius: 5px;
+}

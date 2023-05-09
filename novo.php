@@ -1,23 +1,55 @@
+<?php 
+
+    //Verificar se a postagem existe de acordo com os campos
+    if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"])){
+
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $password = md5($_POST["password"]);
+        $status = $_POST["status"];
+
+        //Verificar se os campos foram preenchidos
+        if(empty($name) or empty($email) or empty($password) or empty($status)){
+            $erro_geral = "Todos os campos são obrigatórios!";
+        }else{
+            $sql = "INSERT INTO users (name, email, password, status) VALUES ('{$name}', '{$email}', '{$password}', '{$status}')";
+            $res = $conn->query($sql);
+
+            if($res==true){
+                print "<script>alert('Cadastrado com sucesso!');</script>";
+                print "<script>location.href='?page=listar';</script>";
+                #print "location.href = '?page=listar'";
+            }else{
+                print "<script>alert('Não foi possível cadastrar!');</script>";
+                print "<script>location.href='?page=listar';</script>";
+            }
+        }
+    }
+
+?>
+
 <h1>Cadastrar novo usuário</h1>
 
-<form id="form" action="?page=salvar" method="POST">
+<form id="form" action="#" method="POST">
 
-    <input type="hidden" name="acao" value="cadastrar" />
+    <!--<input type="hidden" name="acao" value="cadastrar" />-->
+
+    <?php echo (isset($erro_geral) ? "<div id='usuarios-mensagem'>".$erro_geral."</div>" : ""); ?>
 
     <div class="usuario-form">
-        <input type="text" id="name" name="name" placeholder="Digite o nome" />
+        <input type="text" id="name" name="name" placeholder="Digite o nome" value="<?php echo ($_POST['name'] ? $_POST['name'] : ""); ?>" />
     </div>
 
     <div class="usuario-form">
-        <input type="email" id="email" name="email" placeholder="Digite o e-mail" />
+        <input type="email" id="email" name="email" placeholder="Digite o e-mail" value="<?php echo ($_POST['name'] ? $_POST['name'] : ""); ?>" />
     </div>
 
     <div class="usuario-form">
-        <input type="password" id="password" minlength="6" name="password" placeholder="Digite sua senha" >
+        <input type="password" id="password" minlength="6" name="password" placeholder="Digite sua senha" value="<?php echo ($_POST['name'] ? $_POST['name'] : ""); ?>" >
     </div>
 
     <div class="usuario-form">
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme a senha" >
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme a senha" value="<?php echo ($_POST['name'] ? $_POST['name'] : ""); ?>" >
     </div>
 
     <div class="usuario-form">
