@@ -39,11 +39,7 @@
         }
     }
 
-?>
-
-<h1>Editar usuário</h1>
-
-<?php
+    //Dados do registro
     $sql = "SELECT * FROM users WHERE id=".$_REQUEST["id"];
     $usuarios = $pdo->query($sql);
 
@@ -54,12 +50,12 @@
         $password = md5($usuario["password"]);
         $status = $usuario["status"];
     }
+
 ?>
 
-<form id="usuario-formulario" action="#" method="POST">
+<h1>Editar usuário</h1>
 
-    <!--<input type="hidden" name="acao" value="editar" />
-    <input type="hidden" name="id" value="<?php echo $id; ?>" />-->
+<form id="usuario-formulario" action="#" method="POST">
 
     <?php echo (isset($erro_mensagem) ? "<div id='usuarios-mensagem'>".$erro_mensagem."</div>" : ""); ?>
 
@@ -73,12 +69,12 @@
         <input type="email" id="email" name="email"value="<?php echo $email; ?>" placeholder="Digite o e-mail" value="<?php echo (isset($_POST['email']) ? $_POST['email'] : ""); ?>" />
     </div>
 
-    <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['password'] == "" || isset($erro_password) ? "alertRed" : ""); ?>">
+    <div class="usuario-form alertRed">
         <label for="password">Senha do usuário</label>
         <input type="password" id="password" name="password" placeholder="Digite sua senha" value="<?php echo (isset($_POST['password']) ? $_POST['password'] : ""); ?>" >
     </div>
 
-    <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['confirm-password'] == "" || isset($erro_password) ? "alertRed" : ""); ?>">
+    <div class="usuario-form alertRed">
         <label for="confirm-password">Confirme a senha</label>
         <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme a senha" value="<?php echo (isset($_POST['confirm-password']) ? $_POST['confirm-password'] : ""); ?>" >
     </div>
@@ -86,8 +82,8 @@
     <div class="usuario-form">
         <label for="status">Status do usuário</label>
         <select name="status">
-            <option value="Y" <?php echo (isset($erro_geral) && $_POST['status'] == "Y" ? "selected" : ""); ?>>Ativo</option>
-            <option value="N" <?php echo (isset($erro_geral) && $_POST['status'] == "N" ? "selected" : ""); ?>>Inativo</option>
+            <option value="Y" <?php echo ($status == "Y" ? "selected" : ""); ?>>Ativo</option>
+            <option value="N" <?php echo ($status == "N" ? "selected" : ""); ?>>Inativo</option>
         </select>
     </div>
 

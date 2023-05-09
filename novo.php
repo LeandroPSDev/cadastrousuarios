@@ -53,8 +53,6 @@
 
 <form id="form" action="#" method="POST">
 
-    <!--<input type="hidden" name="acao" value="cadastrar" />-->
-
     <?php echo (isset($erro_mensagem) ? "<div id='usuarios-mensagem'>".$erro_mensagem."</div>" : ""); ?>
 
     <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['name'] == "" || isset($erro_name) ? "alertRed" : ""); ?>">

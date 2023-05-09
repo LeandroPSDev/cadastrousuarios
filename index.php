@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="usuario-topo">
-            <div><img src="imagens/favicon.png" alt="Cadastro de usuários" title="Cadastro de usuários" style="margin-right: 10px;" /></div>
+            <div><img src="imagens/usuario.png" alt="Cadastro de usuários" title="Cadastro de usuários" style="margin-right: 10px;" /></div>
                 
             <nav> 
                 <ul>
@@ -40,8 +40,8 @@
                     case "listar":
                         include("listar.php");
                         break;
-                    case "salvar":
-                        include("salvar.php");
+                    case "excluir":
+                        include("excluir.php");
                         break;
                     case "editar":
                         include("editar.php");

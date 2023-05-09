@@ -1,9 +1,10 @@
-<h1>Listar usuários</h1>
 
 <?php
-    $sql = "SELECT id, name, email, status FROM users ORDER BY id asc";
-    $usuarios = $pdo->query($sql);
+    //Listar os usuários
+    $usuarios = $pdo->query('SELECT id, name, email, status FROM users ORDER BY id asc');
 ?>
+
+<h1>Listar usuários</h1>
 
     <?php if(isset($usuarios) or $usuario == ""){ ?>
         <table>
@@ -22,7 +23,7 @@
                     
                     <td>
                         <button onclick="location.href='?page=editar&id=<?php echo $usuario['id']; ?>'" class='btn'><img src='imagens/editar.png' alt='Editar' title='Editar' /></button>
-                        <button onclick="if(confirm('Tem certeza que deseja excluir o usuário: <?php echo $usuario['name']; ?>')){location.href='?page=salvaexcluir&id=<?php echo $usuario['id']; ?>'}else{false;}" class='btn'><img src='imagens/excluir.png' alt='Excluir' title='Excluir' /></button>
+                        <button onclick="if(confirm('Tem certeza que deseja excluir o usuário: <?php echo $usuario['name']; ?>')){location.href='?page=excluir&id=<?php echo $usuario['id']; ?>'}else{false;}" class='btn'><img src='imagens/excluir.png' alt='Excluir' title='Excluir' /></button>
                     </td>
                 </tr>
             <?php } ?>    
