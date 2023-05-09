@@ -7,15 +7,15 @@
         if(empty($_POST["name"]) or empty($_POST["email"]) or empty($_POST["password"]) or empty($_POST["confirm-password"]) or empty($_POST["status"])){
             $erro_geral = "Todos os campos são obrigatórios!";
             $erro_mensagem = $erro_geral;
-        }elseif(!preg_match("/^[a-zA-Z-' ]*$/",$_POST["name"])){
+        }elseif(!preg_match("/^[a-zA-Z-â-á-é-ê-í-î-ó-ô-ú-û' ]*$/",$_POST["name"])){
             $erro_name = "Formato de nome inválido!";
             $erro_mensagem = $erro_name;
         }elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){    
             $erro_email = "E-mail inválido!";
             $erro_mensagem = $erro_email;
         }elseif(strlen($_POST["password"]) < 6){
-                $erro_password = "A senha precisa ter no mínimo 6 caracteres";
-                $erro_mensagem = $erro_password;
+            $erro_password = "A senha precisa ter no mínimo 6 caracteres";
+            $erro_mensagem = $erro_password;
             
         }elseif($_POST["password"] != $_POST["confirm-password"]){
             $erro_password = "A confirmação de senha está errada!";

@@ -19,12 +19,8 @@
                 
             <nav> 
                 <ul>
-                    <li>
-                    <a href="index.php">Listar usuários</a>
-                    </li>
-                    <li>
-                    <a href="?page=novo" >Cadastrar usuários</a>
-                    </li>
+                    <li><a href="index.php">Listar usuários</a></li>
+                    <li><a href="?page=novo" >Cadastrar usuários</a></li>
                 </ul> 
             </nav>
         </div>
@@ -47,8 +43,8 @@
                         include("editar.php");
                         break;
                     default:
-                    include("listar.php");
-                    break;
+                        include("listar.php");
+                        break;
                 }
             ?>
         </div>
@@ -56,7 +52,7 @@
         <footer>
             <a href="#">Cadastro usuário</a>
         </footer>
-        <!--<script src="js/scripts.js"></script>-->
+        <script src="js/scripts.js"></script>
    
     </body>
 </html>

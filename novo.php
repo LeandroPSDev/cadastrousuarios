@@ -7,7 +7,7 @@
         if(empty($_POST["name"]) or empty($_POST["email"]) or empty($_POST["password"]) or empty($_POST["confirm-password"]) or empty($_POST["status"])){
             $erro_geral = "Todos os campos são obrigatórios!";
             $erro_mensagem = $erro_geral;
-        }elseif(!preg_match("/^[a-zA-Z-' ]*$/",$_POST["name"])){
+        }elseif(!preg_match("/^[a-zA-Z-â-á-é-ê-í-î-ó-ô-ú-û' ]*$/",$_POST["name"])){
             $erro_name = "Formato de nome inválido!";
             $erro_mensagem = $erro_name;
         }elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){    
@@ -51,7 +51,7 @@
 
 <h1>Cadastrar novo usuário</h1>
 
-<form id="form" action="#" method="POST">
+<form id="usuario-formulario" action="#" method="POST">
 
     <?php echo (isset($erro_mensagem) ? "<div id='usuarios-mensagem'>".$erro_mensagem."</div>" : ""); ?>
 

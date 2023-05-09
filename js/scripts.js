@@ -1,18 +1,15 @@
 
 //Validar formulário via JS
-const form = document.getElementById("form");
+const form = document.getElementById("usuario-formulario");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const confirmPasswordInput = document.getElementById("confirm-password");
 
-
 form.addEventListener("submit", (e) => {
 
     console.log(nameInput.value, emailInput.value);
     e.preventDefault();
-
-
 
     //Verifica se o nome está vazio
     if (nameInput.value === "") {
