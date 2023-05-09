@@ -6,9 +6,16 @@
         //Verificar se os campos foram preenchidos
         if(empty($_POST["name"]) or empty($_POST["email"]) or empty($_POST["password"]) or empty($_POST["confirm-password"]) or empty($_POST["status"])){
             $erro_geral = "Todos os campos são obrigatórios!";
+            $erro_mensagem = $erro_geral;
+        }elseif(!preg_match("/^[a-zA-Z-' ]*$/",$_POST["name"])){
+            $erro_name = "Formato de nome inválido!";
+            $erro_mensagem = $erro_name;
+        }elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){    
+            $erro_email = "E-mail inválido!";
+            $erro_mensagem = $erro_email;
         }elseif($_POST["password"] != $_POST["confirm-password"]){
-            $erro_geral = "A confirmação da senha está errada!";
-            $senhas_incorretas = "Senhas incorretas!";
+            $erro_password = "A confirmação de senha está errada!";
+            $erro_mensagem = $erro_password;
         }else{
             $name = $_POST["name"];
             $email = $_POST["email"];
@@ -37,24 +44,24 @@
 
     <!--<input type="hidden" name="acao" value="cadastrar" />-->
 
-    <?php echo (isset($erro_geral) ? "<div id='usuarios-mensagem'>".$erro_geral."</div>" : ""); ?>
+    <?php echo (isset($erro_mensagem) ? "<div id='usuarios-mensagem'>".$erro_mensagem."</div>" : ""); ?>
 
-    <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['name'] == "" ? "alertRed" : ""); ?>">
+    <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['name'] == "" || isset($erro_name) ? "alertRed" : ""); ?>">
         <label for="name">Nome do usuário</label>
         <input type="text" id="name" name="name" placeholder="Digite o nome" value="<?php echo (isset($_POST['name']) ? $_POST['name'] : ""); ?>" />
     </div>
 
-    <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['email'] == "" ? "alertRed" : ""); ?>">
+    <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['email'] == "" || isset($erro_email) ? "alertRed" : ""); ?>">
         <label for="email">E-mail do usuário</label>
         <input type="email" id="email" name="email" placeholder="Digite o e-mail" value="<?php echo (isset($_POST['email']) ? $_POST['email'] : ""); ?>" />
     </div>
 
-    <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['password'] == "" ? "alertRed" : ""); ?>">
+    <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['password'] == "" || isset($erro_password) ? "alertRed" : ""); ?>">
         <label for="password">Senha do usuário</label>
         <input type="password" id="password" minlength="6" name="password" placeholder="Digite sua senha" value="<?php echo (isset($_POST['password']) ? $_POST['password'] : ""); ?>" >
     </div>
 
-    <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['confirm-password'] == "" ? "alertRed" : ""); ?>">
+    <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['confirm-password'] == "" || isset($erro_password) ? "alertRed" : ""); ?>">
         <label for="confirm-password">Confirme a senha</label>
         <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme a senha" value="<?php echo (isset($_POST['confirm-password']) ? $_POST['confirm-password'] : ""); ?>" >
     </div>
