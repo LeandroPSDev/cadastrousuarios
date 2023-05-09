@@ -22,18 +22,23 @@
             $password = md5($_POST["password"]);
             $status = $_POST["status"];
 
+            //Verificando se o usuário/e-mail já foi cadastrado
+            $sql = $pdo->prepare('SELECT * FROM users WHERE email=? LIMIT 1');
+            $sql->execute(array($email));
+            $usuario = $sql->fetch();
 
-
-            $sql = "INSERT INTO users (name, email, password, status) VALUES ('{$name}', '{$email}', '{$password}', '{$status}')";
-            $res = $pdo->query($sql);
-
-            if($res==true){
-                print "<script>alert('Cadastrado com sucesso!');</script>";
-                print "<script>location.href='?page=listar';</script>";
-                #print "location.href = '?page=listar'";
+            if(!$usuario){
+                $sql = $pdo->prepare("INSERT INTO users VALUES (null,?,?,?,?)");
+                if($sql->execute(array($name,$email,$password,$status))){
+                    print "<script>alert('Cadastrado com sucesso!');</script>";
+                    print "<script>location.href='?page=listar';</script>";
+                }else{
+                    print "<script>alert('Não foi possível cadastrar!');</script>";
+                    print "<script>location.href='?page=listar';</script>";
+                }
             }else{
-                print "<script>alert('Não foi possível cadastrar!');</script>";
-                print "<script>location.href='?page=listar';</script>";
+                $erro_email = "E-mail de usuário já cadastrado! Tente outro.";
+                $erro_mensagem = $erro_email;
             }
         }
     }
