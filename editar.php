@@ -71,7 +71,7 @@
 
     <div class="usuario-form alertRed">
         <label for="password">Senha do usuário</label>
-        <input type="password" id="password" name="password" placeholder="Digite sua senha" value="<?php echo (isset($_POST['password']) ? $_POST['password'] : ""); ?>" >
+        <input type="password" id="password" minlength="6" name="password" placeholder="Digite sua senha" value="<?php echo (isset($_POST['password']) ? $_POST['password'] : ""); ?>" >
     </div>
 
     <div class="usuario-form alertRed">

@@ -1,6 +1,6 @@
 
 <?php
-    //Listar os usuários
+    //Buscar usuários cadastrados
     $usuarios = $pdo->query('SELECT id, name, email, status FROM users ORDER BY id asc');
 ?>
 
@@ -15,6 +15,7 @@
                 <th>Ações</th>
             </tr>
             
+            <!--Listar os usuários-->
             <?php foreach($usuarios as $usuario){ ?>
                 <tr>
                     <td> <?php echo $usuario['name']; ?></td>
