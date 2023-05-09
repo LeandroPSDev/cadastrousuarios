@@ -13,6 +13,10 @@
         }elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){    
             $erro_email = "E-mail inválido!";
             $erro_mensagem = $erro_email;
+        }elseif(strlen($_POST["password"]) < 6){
+            $erro_password = "A senha precisa ter no mínimo 6 caracteres";
+            $erro_mensagem = $erro_password;
+        
         }elseif($_POST["password"] != $_POST["confirm-password"]){
             $erro_password = "A confirmação de senha está errada!";
             $erro_mensagem = $erro_password;
@@ -65,7 +69,7 @@
 
     <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['password'] == "" || isset($erro_password) ? "alertRed" : ""); ?>">
         <label for="password">Senha do usuário</label>
-        <input type="password" id="password" minlength="6" name="password" placeholder="Digite sua senha" value="<?php echo (isset($_POST['password']) ? $_POST['password'] : ""); ?>" >
+        <input type="password" id="password"  name="password" placeholder="Digite sua senha" value="<?php echo (isset($_POST['password']) ? $_POST['password'] : ""); ?>" >
     </div>
 
     <div class="usuario-form <?php echo (isset($erro_geral) && $_POST['confirm-password'] == "" || isset($erro_password) ? "alertRed" : ""); ?>">

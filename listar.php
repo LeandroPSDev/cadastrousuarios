@@ -22,7 +22,7 @@
                     
                     <td>
                         <button onclick="location.href='?page=editar&id=<?php echo $usuario['id']; ?>'" class='btn'><img src='imagens/editar.png' alt='Editar' title='Editar' /></button>
-                        <button onclick="if(confirm('Tem certeza que deseja excluir o usuário: <?php echo $usuario['name']; ?>')){location.href='?page=salvar&acao=excluir&id=<?php echo $usuario['id']; ?>'}else{false;}" class='btn'><img src='imagens/excluir.png' alt='Excluir' title='Excluir' /></button>
+                        <button onclick="if(confirm('Tem certeza que deseja excluir o usuário: <?php echo $usuario['name']; ?>')){location.href='?page=salvaexcluir&id=<?php echo $usuario['id']; ?>'}else{false;}" class='btn'><img src='imagens/excluir.png' alt='Excluir' title='Excluir' /></button>
                     </td>
                 </tr>
             <?php } ?>    
