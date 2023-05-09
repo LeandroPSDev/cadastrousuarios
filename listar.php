@@ -2,7 +2,7 @@
 
 <?php
     $sql = "SELECT id, name, email, status FROM users ORDER BY id asc";
-    $usuarios = $conn->query($sql);
+    $usuarios = $pdo->query($sql);
 ?>
 
     <?php if(isset($usuarios) or $usuario == ""){ ?>

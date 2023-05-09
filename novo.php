@@ -22,8 +22,10 @@
             $password = md5($_POST["password"]);
             $status = $_POST["status"];
 
+
+
             $sql = "INSERT INTO users (name, email, password, status) VALUES ('{$name}', '{$email}', '{$password}', '{$status}')";
-            $res = $conn->query($sql);
+            $res = $pdo->query($sql);
 
             if($res==true){
                 print "<script>alert('Cadastrado com sucesso!');</script>";

@@ -2,7 +2,7 @@
 
 <?php
     $sql = "SELECT * FROM users WHERE id=".$_REQUEST["id"];
-    $usuarios = $conn->query($sql);
+    $usuarios = $pdo->query($sql);
 
     foreach($usuarios as $usuario){
         $id = $usuario['id'];
