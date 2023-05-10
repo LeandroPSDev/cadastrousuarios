@@ -30,10 +30,7 @@
             $sql->execute(array($_REQUEST["id"],$_POST["email"]));
             $usuario = $sql->fetch();
 
-            print_r($usuario['id']. " - ".$usuario['email']);
-            die();
-
-            if($usuario < 2){
+            if(!$usuario){
 
                 $sql = $pdo->prepare("UPDATE users SET name = ?, email = ?, password = ?, status = ? WHERE id=".$_REQUEST["id"]);
                 if($sql->execute(array($name,$email,$password,$status))){
@@ -44,7 +41,7 @@
                     print "<script>location.href='?page=listar';</script>";
                 }
             }else{
-                $erro_email = "E-mail de usuário já cadastrado! Tente outro.";
+                $erro_email = "O E-mail (".$_POST["email"].") que você tentou cadastrar, já existe! Tente outro.";
                 $erro_mensagem = $erro_email;
             }
             

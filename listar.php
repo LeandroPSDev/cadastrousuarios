@@ -1,12 +1,17 @@
 
 <?php
     //Buscar usuários cadastrados
-    $usuarios = $pdo->query('SELECT id, name, email, status FROM users ORDER BY id asc');
+    $sql = $pdo->prepare('SELECT id, name, email, status FROM users ORDER BY id desc');
+    $sql->execute(array());
+    $usuarios = $sql->fetchAll();
+
+    #print_r($usuarios);
+    #die();
 ?>
 
 <h1>Listar usuários</h1>
 
-    <?php if(isset($usuarios) && $usuarios != ""){ ?>
+    <?php if(isset($usuarios) && $usuarios != "" && empty(!$usuarios)){ ?>
         <table>
             <tr>      
                 <th>Nome</th>
@@ -32,7 +37,7 @@
         </table>
 
     <?php }else{ ?>
-        <div id="sem-cadastro">Não existem usuários cadastrados</div>
+        <div id="usuarios-mensagem">Não existem usuários cadastrados</div>
     <?php } ?>
 
 <div class="usuario-voltar"><a href="javascript:history.back(1)" class="btn btn-secondary">Voltar</a></div>
