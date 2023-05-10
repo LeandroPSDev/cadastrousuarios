@@ -47,8 +47,3 @@
 
 ## Status do projeto
 <p>- Projeto em estado inicial. Será criado um painel de login, tipo de usuário, etc.</p>
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 3740f8617dbb0b65511b3e5f313ab78cbe05b708
