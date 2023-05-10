@@ -26,14 +26,24 @@
             $password = md5($_POST["password"]);
             $status = $_POST["status"];
             
-            $sql = $pdo->prepare("INSERT INTO users VALUES (null,?,?,?,?)");
-            $sql = $pdo->prepare("UPDATE users SET name = ?, email = ?, password = ?, status = ? WHERE id=".$_REQUEST["id"]);
-            if($sql->execute(array($name,$email,$password,$status))){
-                print "<script>alert('Usuário atualizado com sucesso!');</script>";
-                print "<script>location.href='?page=listar';</script>";
+            //Verificando se o usuário/e-mail já foi cadastrado
+            $sql = $pdo->prepare('SELECT * FROM users WHERE email=? LIMIT 1');
+            $sql->execute(array($_POST["email"]));
+            $usuario = $sql->fetch();
+
+            if(!$usuario){
+
+                $sql = $pdo->prepare("UPDATE users SET name = ?, email = ?, password = ?, status = ? WHERE id=".$_REQUEST["id"]);
+                if($sql->execute(array($name,$email,$password,$status))){
+                    print "<script>alert('Usuário atualizado com sucesso!');</script>";
+                    print "<script>location.href='?page=listar';</script>";
+                }else{
+                    print "<script>alert('Não foi possível atualizar!');</script>";
+                    print "<script>location.href='?page=listar';</script>";
+                }
             }else{
-                print "<script>alert('Não foi possível atualizar!');</script>";
-                print "<script>location.href='?page=listar';</script>";
+                $erro_email = "E-mail de usuário já cadastrado! Tente outro.";
+                $erro_mensagem = $erro_email;
             }
             
         }

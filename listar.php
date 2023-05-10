@@ -6,7 +6,7 @@
 
 <h1>Listar usuários</h1>
 
-    <?php if(isset($usuarios) or $usuario == ""){ ?>
+    <?php if(isset($usuarios) && $usuarios != ""){ ?>
         <table>
             <tr>      
                 <th>Nome</th>

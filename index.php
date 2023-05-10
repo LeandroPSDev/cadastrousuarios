@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="usuario-topo">
-            <div><img src="imagens/usuario.png" alt="Cadastro de usuários" title="Cadastro de usuários" style="margin-right: 10px;" /></div>
+            <div><img src="imagens/usuario.png" alt="Cadastro de usuários" title="Cadastro de usuários" /></div>
                 
             <nav> 
                 <ul>
