@@ -4,9 +4,6 @@
     $sql = $pdo->prepare('SELECT id, name, email, status FROM users ORDER BY id desc');
     $sql->execute(array());
     $usuarios = $sql->fetchAll();
-
-    #print_r($usuarios);
-    #die();
 ?>
 
 <h1>Listar usuários</h1>

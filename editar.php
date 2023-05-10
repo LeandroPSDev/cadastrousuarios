@@ -43,8 +43,7 @@
             }else{
                 $erro_email = "O E-mail (".$_POST["email"].") que você tentou cadastrar, já existe! Tente outro.";
                 $erro_mensagem = $erro_email;
-            }
-            
+            }            
         }
     }
 
