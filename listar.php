@@ -31,6 +31,8 @@
 
         </table>
 
+    <?php }else{ ?>
+        <div id="sem-cadastro">Não existem usuários cadastrados</div>
     <?php } ?>
 
 <div class="usuario-voltar"><a href="javascript:history.back(1)" class="btn btn-secondary">Voltar</a></div>

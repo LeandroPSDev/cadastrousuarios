@@ -26,12 +26,14 @@
             $password = md5($_POST["password"]);
             $status = $_POST["status"];
             
-            //Verificando se o usuário/e-mail já foi cadastrado
-            $sql = $pdo->prepare('SELECT * FROM users WHERE email=? LIMIT 1');
-            $sql->execute(array($_POST["email"]));
+            $sql = $pdo->prepare("SELECT * FROM users WHERE id != ? AND email = ?");
+            $sql->execute(array($_REQUEST["id"],$_POST["email"]));
             $usuario = $sql->fetch();
 
-            if(!$usuario){
+            print_r($usuario['id']. " - ".$usuario['email']);
+            die();
+
+            if($usuario < 2){
 
                 $sql = $pdo->prepare("UPDATE users SET name = ?, email = ?, password = ?, status = ? WHERE id=".$_REQUEST["id"]);
                 if($sql->execute(array($name,$email,$password,$status))){
