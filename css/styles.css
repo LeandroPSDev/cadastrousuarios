@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    list-style: none;
     text-decoration: none;
     outline: none;
     border: none;
@@ -76,6 +75,7 @@ table tr:nth-child(2n+1) td {
 #usuario-topo ul li {
     display: inline;
     margin: 0 10px;
+    list-style: none;
 }
 
 #usuario-topo ul li a,
@@ -100,6 +100,14 @@ table tr:nth-child(2n+1) td {
 #usuario-topo ul li:nth-child(2) a,
 .usuario-form button:hover {
     background: rgba(0, 255, 0, 1);
+}
+
+#usuario-topo ul li:nth-child(3) a {
+    background: rgba(205, 92, 92, 1);
+}
+
+#usuario-topo ul li:nth-child(4) a {
+    background: rgba(255, 165, 0, 1);
 }
 
 #usuario-topo ul li a:hover,

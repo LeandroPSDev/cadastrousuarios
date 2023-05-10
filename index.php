@@ -21,6 +21,8 @@
                 <ul>
                     <li><a href="index.php">Listar usuários</a></li>
                     <li><a href="?page=novo" >Cadastrar usuários</a></li>
+                    <li><a href="?page=teorica" >Respostas da parte teórica</a></li>
+                    <li><a href="?page=relatorio" >Relatório projeto</a></li>
                 </ul> 
             </nav>
         </div>
@@ -42,6 +44,12 @@
                     case "editar":
                         include("editar.php");
                         break;
+                    case "teorica":
+                        include("teorica.php");
+                        break;
+                    case "relatorio":
+                        include("relatorio.php");
+                        break;
                     default:
                         include("listar.php");
                         break;
@@ -50,7 +58,7 @@
         </div>
 
         <footer>
-            <a href="#">Cadastro usuário</a>
+            <a href="https://github.com/LeandroPSDev/cadastrousuarios" target="_black" alt="GitHub Leandro" title="GitHub Leandro">Cadastro usuário - Leandro</a>
         </footer>
         <script src="js/scripts.js"></script>
    
